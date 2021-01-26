@@ -1,3 +1,6 @@
+package leetcode
+
+
 /*
  * @lc app=leetcode id=1 lang=golang
  *
@@ -21,7 +24,7 @@ func twoSum(nums []int, target int) []int {
 // @lc code=end
 
 // best solution
-func twoSum(nums []int, target int) []int {
+func twoSum2(nums []int, target int) []int {
 	m := make(map[int]int)
 	for i := 0; i < len(nums); i++ {
 		another := target - nums[i]
