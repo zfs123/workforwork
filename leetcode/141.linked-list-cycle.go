@@ -1,6 +1,5 @@
 package leetcode
 
-
 /*
  * @lc app=leetcode id=141 lang=golang
  *
@@ -16,26 +15,28 @@ package leetcode
  * }
  */
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
+
 func hasCycle(head *ListNode) bool {
-    if head == nil || head.Next == nil {
+	if head == nil {
 		return false
 	}
-	var p, q = head, head.Next.Next
+
+	p, q := head, head
 	for q != nil {
+		p = p.Next
+		if q.Next != nil {
+			q = q.Next.Next
+		} else {
+			return false
+		}
 		if p == q {
 			return true
 		}
-		p = p.Next
-		q = q.Next
-		if q == nil {
-			return false
-		}
-		q = q.Next
 	}
 	return false
 }
-// @lc code=end
 
+// @lc code=end
